@@ -1,9 +1,10 @@
 import Image from "next/image";
+import ApprovalSection from "./(home)/ApprovalSection";
 
 export default function Home() {
     return (
-        <main className="flex min-h-screen flex-col items-center justify-between p-24">
-            Something
+        <main className="items-center justify-between p-24 bg-white">
+            <ApprovalSection approvalStatus="N" loanAmount={100000} monthlyPayment={2500}/>
         </main>
     );
 }

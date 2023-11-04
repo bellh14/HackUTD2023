@@ -8,6 +8,13 @@ const config: Config = {
         "./node_modules/flowbite-react/**/*.js",
     ],
     theme: {
+        colors: {
+            primary: "#05314d",
+            secondary: "#0c77ba",
+            info_text: "#0f5783",
+            info: "#e8f9f9",
+            success: "#28a745",
+        },
         extend: {
             backgroundImage: {
                 "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
