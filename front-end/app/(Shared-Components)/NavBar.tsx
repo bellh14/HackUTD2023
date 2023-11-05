@@ -55,7 +55,7 @@ const NavBar = (props: Props) => {
                 <Navbar.Link href="#" active>About</Navbar.Link>
                 <Navbar.Link href="#" active>Services</Navbar.Link>
                 <Navbar.Link href="/dashboard" active>Dashboard</Navbar.Link>
-                <Navbar.Link href="#" active>Contact</Navbar.Link>
+                <Navbar.Link href="/estimator" active>Estimator</Navbar.Link>
             </Navbar.Collapse>
         </Navbar>
     );
