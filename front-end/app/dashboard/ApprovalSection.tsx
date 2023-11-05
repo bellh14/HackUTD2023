@@ -12,7 +12,7 @@ type Props = {
 
 const ApprovalSection = (props: Props) => {
     return (
-        <div className="flex flex-col items-center text-center">
+        <div className="flex flex-col items-center text-center basis-4/5">
             <h1 className="text-4xl font-bold mb-10 text-black">
                 {props.approvalStatus === "Y"
                     ? "Congratulations!"
