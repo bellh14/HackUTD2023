@@ -9,7 +9,7 @@ type Props = {};
 
 const NavBar = (props: Props) => {
     return (
-        <Navbar fluid rounded>
+        <Navbar fluid rounded className="bg-primary">
             <Navbar.Brand href="https://flowbite-react.com">
                 <Image
                   src={exampleLogo}
@@ -18,7 +18,7 @@ const NavBar = (props: Props) => {
                   className={"mr-4"}
                   alt={"Example Logo"}
                 />
-                <span className="self-center whitespace-nowrap text-xl font-semibold text-black dark:text-white">
+                <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
                     Name
                 </span>
             </Navbar.Brand>
@@ -49,13 +49,13 @@ const NavBar = (props: Props) => {
                 <Navbar.Toggle />
             </div>
             <Navbar.Collapse>
-                <Navbar.Link href="#" active>
+                <Navbar.Link href="/" active>
                     Home
                 </Navbar.Link>
-                <Navbar.Link href="#">About</Navbar.Link>
-                <Navbar.Link href="#">Services</Navbar.Link>
-                <Navbar.Link href="#">Graphs</Navbar.Link>
-                <Navbar.Link href="#">Contact</Navbar.Link>
+                <Navbar.Link href="#" active>About</Navbar.Link>
+                <Navbar.Link href="#" active>Services</Navbar.Link>
+                <Navbar.Link href="/dashboard" active>Dashboard</Navbar.Link>
+                <Navbar.Link href="/estimator" active>Estimator</Navbar.Link>
             </Navbar.Collapse>
         </Navbar>
     );
