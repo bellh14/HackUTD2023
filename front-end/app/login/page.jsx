@@ -10,7 +10,7 @@ export default function Camera() {
 
   async function sendBlobToAPI(frameData) {
     try {
-      const response = await fetch("http://192.168.1.64:8000/api/face-recognition", {
+      const response = await fetch("http://192.168.1.233:8000/api/face-recognition", {
         method: "POST",
         body: frameData,
       });
@@ -21,7 +21,7 @@ export default function Camera() {
 
         if (result?.match) {
           // Set a login flag or token in localStorage
-          localStorage.setItem("isLoggedIn", "true");
+          localStorage.setItem("isLoggedIn", JSON.stringify(result));
 
           // Show the result for 2 seconds (adjust the duration as needed)
           setTimeout(() => {
