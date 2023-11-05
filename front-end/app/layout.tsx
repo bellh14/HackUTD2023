@@ -4,7 +4,7 @@ import './globals.css'
 import NavBar from './(Shared-Components)/NavBar'
 import FooterBar from './(Shared-Components)/FooterBar'
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ['latin']})
 
 export const metadata: Metadata = {
   title: 'Hack UTD',
