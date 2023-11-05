@@ -10,7 +10,7 @@ export default function Camera() {
 
   async function sendBlobToAPI(frameData) {
     try {
-      const response = await fetch("http://192.168.1.233:8000/api/face-recognition", {
+      const response = await fetch("http://10.169.183.1:8000/api/face-recognition", {
         method: "POST",
         body: frameData,
       });
