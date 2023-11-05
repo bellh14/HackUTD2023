@@ -5,7 +5,7 @@ type Props = {};
 
 export default function estimator(props: Props) {
     return (
-        <main className="items-center justify-between p-24 bg-white">
+        <main className="items-center justify-between p-24 bg-white h-screen">
             <Estimator />
         </main>
     );
