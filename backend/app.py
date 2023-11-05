@@ -2,6 +2,8 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 
+import approval
+
 import json
 app = FastAPI()
 
@@ -25,20 +27,10 @@ class Data(BaseModel):
     
     
 @app.post("/process_data/")
-async def process_data(data: Data):
-
-    print(data)
-    #Choose 0 or 1 in random
-    import random
-    random.seed(1)
-    random_number = random.randint(0,1)
+async def process_data(userInputdata: Data):
+    print(userInputdata)
     
-    if random_number == 0:
-        data = {"status": "approved", "ammount": 100000}
-    else:
-        data = {"status": "denied", "message": "Lmaooo u broke"}
-    
-    return data
+    return approval.userInputToCheck(userInputdata)
 
 if __name__ == "__main__":
     import uvicorn
