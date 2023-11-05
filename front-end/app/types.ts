@@ -15,3 +15,13 @@ export type AnalyzedHomeBuyerInfoType = {
     FEDTI: number;
     Approved: string;
 };
+
+export type PostFormData = {
+    CarPayment: number;
+    StudentLoanPayments: number;
+    CreditCardPayments: number;
+    CreditScore: number;
+    GrossMonthlyIncome: number;
+    AppraisedValue: number;
+    DownPayment: number;
+};
