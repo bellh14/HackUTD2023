@@ -28,6 +28,10 @@ export async function createPost(formData: PostFormData) {
         body: JSON.stringify(post),
     })
         .then((response) => response.json())
+        .then((response) => {
+            console.log(response);
+            return response;
+        })
         .catch((error) => {
             console.log("Error: ", error);
             return {};

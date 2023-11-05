@@ -2,12 +2,13 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import EstimatorInput from "./EstimatorInput";
-import { Button } from "flowbite-react";
+import { Button, Modal } from "flowbite-react";
 import { createPost, fetchPosts, createPostAsync } from "../api/API";
 import HomeBuyerStats from "../HomeBuyerStats";
 import axios from "axios";
 import UserInfo from "../UserInfo";
 import ApprovalSection from "../(Shared-Components)/ApprovalSection";
+import { PostFormData } from "../types";
 
 type Props = {};
 
@@ -15,12 +16,25 @@ const Estimator = (props: Props) => {
     // const dispatch = useDispatch<AppDispatch>();
     const [state, setState] = useState(1);
     const [carPayment, setCarPayment] = useState(0);
+    const [forceUpdate, setForceUpdate] = useState(false);
     const [studentLoanPayments, setStudentLoanPayments] = useState(0);
     const [creditCardPayment, setCreditCardPayment] = useState(0);
     const [creditScore, setCreditScore] = useState(0);
     const [grossMonthlyIncome, setGrossMonthlyIncome] = useState(0);
     const [appraisedValue, setAppraisedValue] = useState(0);
     const [downPayment, setDownPayment] = useState(0);
+    const [openModal, setOpanModal] = useState(false);
+    const [loading, setLoading] = useState(true);
+    const [formData, setFormData] = useState({
+        CarPayment: 0,
+        StudentLoanPayments: 0,
+        CreditCardPayments: 0,
+        CreditScore: 0,
+        GrossMonthlyIncome: 0,
+        AppraisedValue: 0,
+        DownPayment: 0,
+    });
+
     const [modelResponse, setModelResponse] = useState({
         status: "",
         message: "",
@@ -28,7 +42,7 @@ const Estimator = (props: Props) => {
 
     async function submitHandler(e: any) {
         e.preventDefault();
-        const formData = {
+        const formData: PostFormData = {
             CarPayment: carPayment,
             StudentLoanPayments: studentLoanPayments,
             CreditCardPayments: creditCardPayment,
@@ -37,9 +51,16 @@ const Estimator = (props: Props) => {
             AppraisedValue: appraisedValue,
             DownPayment: downPayment,
         };
-        setModelResponse(await createPost(formData));
+        const data = await createPost(formData);
+        console.log(data);
+        setModelResponse(data);
         setState(state + 1);
-        
+        setFormData(formData);
+        const handleForceUpdate = () => {
+            setForceUpdate((prevState) => !prevState);
+        };
+        handleForceUpdate();
+        setLoading(false);
     }
 
     return (
@@ -113,8 +134,37 @@ const Estimator = (props: Props) => {
                 >
                     Estimate
                 </Button>
+                <Button
+                    className="text-2xl bg-secondary w-2/5 my-8"
+                    onClick={() => setOpanModal(true)}
+                >
+                    Display Results
+                </Button>
             </section>
-                   
+            {/* <Modal show={openModal} onClose={() => setOpanModal(false)} popup>
+                <Modal.Header></Modal.Header>
+                <Modal.Body>
+                    <ApprovalSection
+                        approvalStatus={modelResponse.status}
+                        reasonForDenial={modelResponse.message}
+                    />
+                </Modal.Body>
+            </Modal> */}
+            {/* <Modal show={openModal} onClose={() => setOpanModal(false)} popup>
+                <Modal.Header></Modal.Header>
+                <Modal.Body>
+                    <ApprovalSection
+                        approvalStatus={modelResponse.status}
+                        reasonForDenial={modelResponse.message}
+                    />
+                </Modal.Body>
+            </Modal> */}
+            {!loading && (
+                <ApprovalSection
+                    approvalStatus={modelResponse.status}
+                    reasonForDenial={modelResponse.message}
+                />
+            )}
         </main>
     );
 };

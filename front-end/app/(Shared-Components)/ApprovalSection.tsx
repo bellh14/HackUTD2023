@@ -1,18 +1,21 @@
 "use client";
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import { Card } from "flowbite-react";
+import { createPost } from "../api/API";
+import { PostFormData } from "../types";
 
 type Props = {
-    approvalStatus: string;
+    approvalStatus?: string;
     loanAmount?: number;
     monthlyPayment?: number;
     reasonForDenial?: string;
     resources?: string;
+    formData?: PostFormData;
 };
 
 const renderSwitch = (props: Props) => {
     switch (props.approvalStatus) {
-        case "Y":
+        case "approved":
             return (
                 <Card className="w-full items-center text-center h-auto text-info_text">
                     <h1 className="text-4xl font-bold mb-4 text-black">
@@ -31,7 +34,7 @@ const renderSwitch = (props: Props) => {
                     </h4>
                 </Card>
             );
-        case "N":
+        case "denied":
             return (
                 <Card className="w-full items-center text-center h-auto text-info_text">
                     <h1 className="text-4xl font-bold mb-4 text-black">
