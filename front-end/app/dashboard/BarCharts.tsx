@@ -23,7 +23,7 @@ type Props = {
 const BarCharts = (props: Props) => {
     return (
         <div className={"flex flex-col text-center shadow-md"} suppressHydrationWarning={true}>
-            <h3 className="text-2xl font-bold mb-4 text-primary">{props.title}</h3>
+            <h3 className="text-2xl font-bold my-4 text-primary">{props.title}</h3>
             <BarChart
                 width={480}
                 height={300}
