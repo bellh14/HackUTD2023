@@ -1,6 +1,7 @@
 const HomeBuyerStats = [
   {
     "ID": 0,
+    "key": "min",
     "GrossMonthlyIncome": 2000,
     "CreditCardPayment": 200,
     "CarPayment": 350,
@@ -10,6 +11,7 @@ const HomeBuyerStats = [
   },
   {
     "ID": 1,
+    "key": "max",
     "GrossMonthlyIncome": 9999,
     "CreditCardPayment": 499,
     "CarPayment": 499,
@@ -19,6 +21,7 @@ const HomeBuyerStats = [
   },
   {
     "ID": 2,
+    "key": "mean",
     "GrossMonthlyIncome": 5979,
     "CreditCardPayment": 351,
     "CarPayment": 424,
@@ -28,6 +31,7 @@ const HomeBuyerStats = [
   },
   {
     "ID": 3,
+    "key": "median",
     "GrossMonthlyIncome": 5944,
     "CreditCardPayment": 351,
     "CarPayment": 424,
@@ -37,6 +41,7 @@ const HomeBuyerStats = [
   },
   {
     "ID": 4,
+    "key": "std",
     "GrossMonthlyIncome": 2326,
     "CreditCardPayment": 87,
     "CarPayment": 43,
