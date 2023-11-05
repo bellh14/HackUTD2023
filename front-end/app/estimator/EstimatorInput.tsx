@@ -64,6 +64,7 @@ const maxValues = (label: string) => {
     }
 }
 
+
 const EstimatorInput = (props: Props) => {
     return (
         <div className="flex max-w-md flex-col gap-4 my-4">
