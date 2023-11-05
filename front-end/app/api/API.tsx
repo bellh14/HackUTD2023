@@ -4,7 +4,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 const API_URL = "https://desktop-n8l5vco.tail1d1d2.ts.net";
 
 export async function fetchPosts() {
-    return fetch(`${API_URL}/posts`, {
+    return fetch(`${API_URL}/process_data/`, {
         method: "GET",
         headers: {
             "Content-Type": "application/json",
@@ -25,9 +25,7 @@ export async function createPost(formData: PostFormData) {
         headers: {
             "Content-Type": "application/json",
         },
-        body: JSON.stringify(
-            post
-        ),
+        body: JSON.stringify(post),
     })
         .then((response) => response.json())
         .catch((error) => {
@@ -51,4 +49,3 @@ export const createPostAsync = createAsyncThunk(
         return response;
     }
 );
-

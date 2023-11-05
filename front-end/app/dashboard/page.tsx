@@ -2,7 +2,7 @@
 import React from "react";
 import LineCharts from "./LineCharts";
 import BarCharts from "./BarCharts";
-import ApprovalSection from "./ApprovalSection";
+import ApprovalSection from "../(Shared-Components)/ApprovalSection";
 import dynamic from "next/dynamic";
 
 const BarChart = dynamic(() => import("./BarCharts"), { ssr: false });

@@ -5,7 +5,7 @@ import { Carousel } from "flowbite-react";
 import Home1 from "../public/Carousel/home1.jpg";
 import Home2 from "../public/Carousel/home2.jpg";
 import Home3 from "../public/Carousel/home3.jpg";
-import ApprovalSection from "./dashboard/ApprovalSection";
+import ApprovalSection from "./(Shared-Components)/ApprovalSection";
 
 export default function Home() {
     return (
