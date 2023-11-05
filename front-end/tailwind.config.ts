@@ -14,6 +14,12 @@ const config: Config = {
                 "gradient-conic":
                     "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
             },
+
+            footer: {
+                backgroundColor: "#333",
+                color: "#fff",
+                padding: "1rem",
+            },
         },
     },
     plugins: [require("flowbite/plugin")],
