@@ -13,7 +13,7 @@ face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_fronta
 
 images = [
     {
-        'name': 'Meyli',
+        'name': 'meyli',
         'image': 'Okay.jpg'
     }
 ]

@@ -1,6 +1,6 @@
 'use client';
 import React, { useRef, useEffect, useState } from "react";
-import { AiOutlineCheckCircle } from "react-icons/Ai";
+import { AiOutlineCheckCircle } from 'react-icons/ai';
 import { useRouter } from 'next/navigation';
 
 export default function Camera() {
