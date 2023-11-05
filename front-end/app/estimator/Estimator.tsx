@@ -134,12 +134,6 @@ const Estimator = (props: Props) => {
                 >
                     Estimate
                 </Button>
-                <Button
-                    className="text-2xl bg-secondary w-2/5 my-8"
-                    onClick={() => setOpanModal(true)}
-                >
-                    Display Results
-                </Button>
             </section>
             {/* <Modal show={openModal} onClose={() => setOpanModal(false)} popup>
                 <Modal.Header></Modal.Header>
@@ -159,12 +153,18 @@ const Estimator = (props: Props) => {
                     />
                 </Modal.Body>
             </Modal> */}
-            {!loading && (
+            {modelResponse.status === "approved" && !loading && (
+                <ApprovalSection
+                    approvalStatus={modelResponse.status}
+                    message={modelResponse.message}
+                />
+            )}
+            {modelResponse.status === "denied" && !loading && (
                 <ApprovalSection
                     approvalStatus={modelResponse.status}
                     reasonForDenial={modelResponse.message}
                 />
-            )}
+            )}{" "}
         </main>
     );
 };

@@ -7,10 +7,12 @@ import { PostFormData } from "../types";
 type Props = {
     approvalStatus?: string;
     loanAmount?: number;
+    years?: string;
     monthlyPayment?: number;
     reasonForDenial?: string;
     resources?: string;
     formData?: PostFormData;
+    message?: [""] | [" "];
 };
 
 const renderSwitch = (props: Props) => {
@@ -24,13 +26,21 @@ const renderSwitch = (props: Props) => {
                     <h3 className="text-2xl font-bold mb-4">
                         You have been approved for a home mortgage loan
                     </h3>
-                    <h6 className="text-md">Loan Amount</h6>
+                    <h6 className="text-md">Duration of fixed term loan</h6>
+                    <h4 className="text-4xl font-bold mb-4">
+                        {props.message[1] + props.message[2] + ("years")}
+                    </h4>
+                    {/* <h6 className="text-md">Loan Amount</h6>
                     <h2 className="text-4xl font-bold mb-4 text-[#28a745]">
                         ${props.loanAmount}
-                    </h2>
+                    </h2> */}
                     <h6 className="text-md">Monthly Payment</h6>
                     <h4 className="text-4xl font-bold mb-4">
-                        ${props.monthlyPayment}
+                        $
+                        {props.message[5] +
+                            props.message[6] +
+                            props.message[7] +
+                            props.message[8]}
                     </h4>
                 </Card>
             );
