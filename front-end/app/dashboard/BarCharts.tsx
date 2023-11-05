@@ -1,4 +1,3 @@
-"use client";
 import React from "react";
 import {
     BarChart,
@@ -16,14 +15,18 @@ import HomeBuyerStats from "../HomeBuyerStats";
 import AnalyzedHomeBuyerInfo from "../estimator/AnalyzedHomeBuyerInfo";
 import UserInfo from "../UserInfo";
 
-type Props = {};
+type Props = {
+    title: string;
+    label: string;
+};
 
 const BarCharts = (props: Props) => {
     return (
-        <div suppressHydrationWarning={true}>
+        <div className={"flex flex-col text-center shadow-md"} suppressHydrationWarning={true}>
+            <h3 className="text-2xl font-bold mb-4 text-primary">{props.title}</h3>
             <BarChart
-                width={800}
-                height={600}
+                width={480}
+                height={300}
                 data={UserInfo}
                 margin={{
                     top: 5,
@@ -31,14 +34,13 @@ const BarCharts = (props: Props) => {
                     left: 20,
                     bottom: 5,
                 }}
-                className="bg-white"
+                className="bg-white my-4"
             >
                 <CartesianGrid strokeDasharray="3 3" />
                 <XAxis dataKey="key" />
                 <YAxis />
                 <Tooltip />
-                <Legend />
-                <Bar dataKey="GrossMonthlyIncome" fill="#8884d8">
+                <Bar dataKey={props.label} fill="#8884d8">
                     {UserInfo.map((entry, index) => (
                         <Cell
                             cursor="pointer"

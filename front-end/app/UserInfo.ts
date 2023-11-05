@@ -25,6 +25,7 @@ const UserInfo = [
         StudentLoanPayments: 200,
         DownPayment: 11512,
         CreditScore: 500,
+        AppraisedValue: 230021,
     },
     {
         key: "max",
@@ -34,6 +35,7 @@ const UserInfo = [
         StudentLoanPayments: 449,
         DownPayment: 144251,
         CreditScore: 849,
+        AppraisedValue: 499996,
     },
     {
         key: "mean",
@@ -43,6 +45,7 @@ const UserInfo = [
         StudentLoanPayments: 326,
         DownPayment: 62294,
         CreditScore: 675,
+        AppraisedValue: 365522,
     },
     {
         key: "median",
@@ -52,6 +55,7 @@ const UserInfo = [
         StudentLoanPayments: 326,
         DownPayment: 59453,
         CreditScore: 674,
+        ApprasiedValue: 366392,
     },
     {
         key: "std",
@@ -61,6 +65,7 @@ const UserInfo = [
         StudentLoanPayments: 72,
         DownPayment: 29846,
         CreditScore: 101,
+        ApprasiedValue: 77839,
     },
 ];
 
